@@ -8,8 +8,8 @@ class JsonPlaceHolder {
   getPosts() {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        this.__printData("Todos los post", response.data);
+      .then(({ data }) => {
+        this.__printData("Todos los post", data);
       })
       .catch((error) => {
         this.__printData("Error en la petición", error);
@@ -23,8 +23,8 @@ class JsonPlaceHolder {
     const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
     axios
       .get(url)
-      .then((response) => {
-        this.__printData(`Recuperando el post con id:${id}`, response.data);
+      .then(({ data }) => {
+        this.__printData(`Recuperando el post con id:${id}`, data);
       })
       .catch((error) => {
         this.__printData("Error en la petición", error);
@@ -43,8 +43,8 @@ class JsonPlaceHolder {
           "Content-type": "application/json; charset=UTF-8",
         },
       })
-      .then((response) => {
-        this.__printData("Crear usuario usando post", response.data);
+      .then(({ data }) => {
+        this.__printData("Crear usuario usando post", data);
       })
       .catch((error) => {
         this.__printData("Error en la petición", error);
@@ -63,8 +63,8 @@ class JsonPlaceHolder {
           "Content-type": "application/json; charset=UTF-8",
         },
       })
-      .then((response) => {
-        this.__printData(`Actualizando el post con id:${id}`, response.data);
+      .then(({ data }) => {
+        this.__printData(`Actualizando el post con id:${id}`, data);
       })
       .catch((error) => {
         this.__printData("Error en la petición", error);
@@ -78,8 +78,8 @@ class JsonPlaceHolder {
     const url = `https://jsonplaceholder.typicode.com/users/${id}`;
     axios
       .delete(url)
-      .then((response) => {
-        this.__printData(`Eliminando el usuario id:${id}`, response.data);
+      .then(({ data }) => {
+        this.__printData(`Eliminando el usuario id:${id}`, data);
       })
       .catch((error) => {
         this.__printData("Error en la petición", error);
